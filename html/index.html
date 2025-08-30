@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Araç Kiralama</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #menu {
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            transform: translateY(-50%);
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 15px;
+            padding: 25px 30px;
+            width: 300px;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+            display: none;
+            animation: slideIn 0.4s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00bfff;
+        }
+
+        .btn {
+            display: block;
+            margin: 12px 0;
+            padding: 14px;
+            width: 100%;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-car {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .btn-car:hover {
+            opacity: 0.9;
+        }
+
+        .btn-bike {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+        }
+
+        .btn-bike:hover {
+            opacity: 0.9;
+        }
+
+        .btn-close {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .btn-close:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h2>🚘 Araç Kiralama</h2>
+        <button class="btn btn-car" id="carBtn">🚗 Araba Kirala - $500</button>
+        <button class="btn btn-bike" id="bikeBtn">🏍️ Motorsiklet Kirala - $200</button>
+        <button class="btn btn-close" id="closeBtn">❌ Menüyü Kapat</button>
+    </div>
+
+    <script>
+        window.addEventListener('message', (event) => {
+            const data = event.data;
+            if (data.action === "openMenu") {
+                document.getElementById('menu').style.display = 'block';
+            }
+            if (data.action === "closeMenu") {
+                document.getElementById('menu').style.display = 'none';
+            }
+        });
+
+        document.getElementById('carBtn').addEventListener('click', () => {
+            fetch(`https://${GetParentResourceName()}/rentCar`, { method: 'POST' });
+        });
+
+        document.getElementById('bikeBtn').addEventListener('click', () => {
+            fetch(`https://${GetParentResourceName()}/rentBike`, { method: 'POST' });
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', () => {
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' });
+        });
+    </script>
+</body>
+</html>
