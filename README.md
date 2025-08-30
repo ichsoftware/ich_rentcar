@@ -1,4 +1,4 @@
-<h1 align="center">📜 ich_loadingscreen</h1>
+<h1 align="center">📜 ich_rentcar</h1>
 
 <p align="center">
   A simple and modular car rental system — designed for easy integration and extensibility.
@@ -15,7 +15,7 @@
 
 ## 🧩 About The Project
 
-**ich_loadingscreen** is a sleek and customizable loading screen for FiveM. Built with modern front-end technologies (HTML, SCSS, JS) and Lua integration for FiveM compatibility, it offers smooth transitions and easy configuration.
+**ich_rentcar** is a car rental system developed for FiveM servers. It allows players to rent cars from specific locations. Rented cars are returned manually. It works in conjunction with server data and image controls.
 
 ---
 
