@@ -31,7 +31,7 @@
 
 ## ⚙️ Getting Started
 
-No build tools required—just clone, configure, and start using.
+No build tools required — just clone, configure, and start using.
 
 ---
 
