@@ -44,3 +44,12 @@ ich_rentcar/<br>
 ├── server.lua # Core logging logic<br>
 ├── client.lua # Main code text<br>
 └── README.md # Project documentation<br>
+
+### 📦 Installation
+
+1. Clone or download the repository.
+2. Place the `ich_rentcar` folder in your `resources` directory.
+3. Add the following line to your `server.cfg`:
+
+```cfg
+ensure ich_rentcar
